@@ -1,0 +1,2 @@
+
+print("ziyodev branchdan salom")
