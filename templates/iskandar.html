@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salom Sahifasi</title>
+  <style>
+    :root {
+      --bg1: #00c6ff;
+      --bg2: #0072ff;
+      --card-bg: #fff;
+      --accent: #0072ff;
+      --shadow: 0 10px 25px rgba(0,0,0,0.1);
+      --radius: 15px;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 26px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #eee;
+      border-radius: var(--radius);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 5px rgba(0,114,255,0.3);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: #005ad1;
+      transform: translateY(-2px);
+    }
+
+    .greeting {
+      margin-top: 25px;
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 600;
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Assalomu alaykum 👋</h1>
+    <p>Ismingizni kiriting va salom yozib beramiz</p>
+
+    <input type="text" id="name" placeholder="Ismingiz...">
+    <button onclick="sayHello()">Jo‘natish</button>
+
+    <div class="greeting" id="greeting"></div>
+  </div>
+
+  <script>
+    function sayHello() {
+      const name = document.getElementById('name').value.trim();
+      const greetingDiv = document.getElementById('greeting');
+
+      if (name === "") {
+        greetingDiv.textContent = "Iltimos, ismingizni kiriting 😅";
+      } else {
+        greetingDiv.textContent = `Salom, ${name}! Sizga omad tilayman ⚡`;
+      }
+    }
+  </script>
+</body>
+</html>
