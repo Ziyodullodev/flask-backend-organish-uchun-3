@@ -1,0 +1,1 @@
+print("iskandar branchdan salom")
