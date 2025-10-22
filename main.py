@@ -7,9 +7,14 @@ app = Flask("__name__")
 def home():
     return render_template("index.html")
 
+@app.route("/home")
+def home_page():
+    return render_template("home.html")
+
+
 @app.route("/iskandar")
 def iskandar():
-    return render_template("iskandar.html")
+    return render_template("iskandar_new.html")
 
 
 @app.route("/abdurahmon")
