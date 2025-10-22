@@ -9,7 +9,7 @@ def home():
 
 @app.route("/iskandar")
 def iskandar():
-    return render_template("iskandar.html")
+    return render_template("iskandar_new.html")
 
 
 @app.route("/abdurahmon")
